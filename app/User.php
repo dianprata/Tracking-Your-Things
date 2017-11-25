@@ -37,6 +37,16 @@ class User extends Authenticatable
         }
     }
 
+    public function doDeactiveMember(){
+        if($this->active === 1){
+            $this->active = 0;
+            $this->save();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function roles()
      {
          return $this->belongsToMany(Role::class);
@@ -58,6 +68,14 @@ class User extends Authenticatable
              $role = Role::whereRoleName($role)->first();
          }
          return $this->roles()->detach($role);
+     }
+
+     public function getRoleAdmin($query){
+         return $query->where('role_name', 'Admin');
+     }
+
+     public function getRoleMember(){
+         return $this->where('role_name', 'Member');
      }
 
      public function hasRole($roleName)
