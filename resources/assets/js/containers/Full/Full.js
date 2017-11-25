@@ -18,7 +18,7 @@ import Tables from '../../views/Components/Tables/';
 import Tabs from '../../views/Components/Tabs/';
 import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
-import belajarReactShow from '../../views/belajarReact/show';
+import memberVerify from '../../views/member/Verify';
 
 class Full extends Component {
     render() {
@@ -32,7 +32,7 @@ class Full extends Component {
                         <Container fluid>
                             <Switch>
                                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
-                                <Route path="/belajar-react/show" name="Belejar React Show" component={belajarReactShow} />
+                                <Route path="/member/verify" name="Member Verify" component={memberVerify} />
                                 <Route path="/components/buttons" name="Buttons" component={Buttons}/>
                                 <Route path="/components/cards" name="Cards" component={Cards}/>
                                 <Route path="/components/forms" name="Forms" component={Forms}/>

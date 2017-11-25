@@ -11,7 +11,7 @@ export default {
         },
         {
             title: true,
-            name: 'UI elements',
+            name: 'Management Member',
             wrapper: {            // optional wrapper object
                 element: "span",      // required valid HTML5 element tag
                 attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
@@ -19,16 +19,34 @@ export default {
             class: ""             // optional class names space delimited list for title item ex: "text-center"
         },
         {
-            name: 'Belajar React',
-            url: '/belajar-react',
+            name: 'Member',
+            url: '/member',
             icon: 'icon-puzzle',
             children: [
                 {
-                    name: 'Show',
+                    name: 'Verify',
+                    url: '/member/verify',
+                    icon: 'icon-puzzle'
+                },
+                {
+                    name: 'Deactive',
                     url: '/belajar-react/show',
                     icon: 'icon-puzzle'
                 }
             ]
+        },
+        {
+            title: true,
+            name: 'Management Trings',
+            wrapper: {            // optional wrapper object
+                element: "span",      // required valid HTML5 element tag
+                attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
+            },
+            class: ""             // optional class names space delimited list for title item ex: "text-center"
+        },
+        {
+            title: true,
+            name: 'Extras'
         },
         {
             name: 'Components',
@@ -114,10 +132,6 @@ export default {
         },
         {
             divider: true
-        },
-        {
-            title: true,
-            name: 'Extras'
         },
         {
             name: 'Pages',
