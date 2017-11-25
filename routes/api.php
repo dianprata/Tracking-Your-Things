@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('register', 'AuthController@register');
+Route::post('login', 'AuthController@login');
+Route::post('recover', 'AuthController@recover');
+Route::get('logout', 'AuthController@logout');
+
+Route::group(['middleware' => ['jwt']], function() {
+    Route::get('user/activate/{userId}', 'Api\UserController@doActivateMember');
+    Route::get('test', function(){
+        return response()->json(['foo'=>'bar']);
+    });
 });
