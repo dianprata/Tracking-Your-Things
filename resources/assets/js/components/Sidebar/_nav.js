@@ -24,13 +24,8 @@ export default {
             icon: 'icon-puzzle',
             children: [
                 {
-                    name: 'Verify',
-                    url: '/member/verify',
-                    icon: 'icon-puzzle'
-                },
-                {
-                    name: 'Deactive',
-                    url: '/belajar-react/show',
+                    name: 'Verify & Deactive',
+                    url: '/member/verify-and-deactive',
                     icon: 'icon-puzzle'
                 }
             ]
@@ -43,6 +38,33 @@ export default {
                 attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
             },
             class: ""             // optional class names space delimited list for title item ex: "text-center"
+        },
+        {
+            name: 'Trings',
+            url: '/trings',
+            icon: 'icon-puzzle',
+            children: [
+                {
+                    name: 'Product',
+                    url: '/trings/product',
+                    icon: 'icon-puzzle'
+                },
+                {
+                    name: 'Category',
+                    url: '/trings/category',
+                    icon: 'icon-puzzle'
+                },
+                {
+                    name: 'Shipping',
+                    url: '/trings/shipping',
+                    icon: 'icon-puzzle'
+                },
+                {
+                    name: 'History',
+                    url: '/trings/history',
+                    icon: 'icon-puzzle'
+                }
+            ]
         },
         {
             title: true,

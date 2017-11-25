@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-     'name', 'email', 'password', 'is_verified'
+     'name', 'email', 'password', 'is_verified', 'company'
     ];
 
     /**
@@ -37,9 +37,19 @@ class User extends Authenticatable
         }
     }
 
-    public function doDeactiveMember(){
-        if($this->active === 1){
+    public function doDeactive(){
+        if($this->active === 1 && $this->is_verified){
             $this->active = 0;
+            $this->save();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function doUnverifyMember(){
+        if($this->active === 0){
+            $this->is_verified = 0;
             $this->save();
             return true;
         } else {

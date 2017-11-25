@@ -16,7 +16,9 @@
     "localStorage": "^1.0.3",
     "moment": "^2.19.1",
     "moment-timezone": "^0.5.14",
+    "prop-types": "^15.6.0",
     "react-bootstrap": "^0.31.2",
+    "react-cookie": "^2.1.2",
     "react-currency-input": "^1.3.4",
     "react-datepicker": "^0.54.0",
     "react-file-download": "^0.3.5",
@@ -26,7 +28,8 @@
     "react-pdf-component": "0.0.1",
     "react-pdfjs": "^1.0.7",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "universal-cookie": "^2.1.2"
   },
   "dependencies": {
     "axios": "^0.16.2",

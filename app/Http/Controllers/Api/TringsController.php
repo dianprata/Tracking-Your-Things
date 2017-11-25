@@ -15,6 +15,8 @@ class TringsController extends Controller
         $product->price = $request->price;
         $product->quantity = $request->quantity;
         $product->save();
+
+        return response()->json("Successfull Create Product", 200);
     }
 
     public function editProduct($productId, Request $request){
@@ -31,7 +33,9 @@ class TringsController extends Controller
     }
 
     public function showProduct(){
-        $product = Product::where('void', 0)->get();
+        $product = Product::with('getCategory')->where('void', 0)->get();
+
+        return response()->json($product, 200);
     }
 
     public function destroyProduct($productId){

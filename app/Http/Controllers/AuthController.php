@@ -29,12 +29,14 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+            'company' => 'required|max:255'
         ];
         $input = $request->only(
             'name',
             'email',
             'password',
-            'password_confirmation'
+            'password_confirmation',
+            'company'
         );
         $validator = Validator::make($input, $rules);
         if($validator->fails()) {
@@ -44,7 +46,8 @@ class AuthController extends Controller
         $name = $request->name;
         $email = $request->email;
         $password = $request->password;
-        $user = User::create(['name' => $name, 'email' => $email, 'password' => Hash::make($password)]);
+        $company = $request->company;
+        $user = User::create(['name' => $name, 'email' => $email, 'password' => Hash::make($password), 'company' => $company]);
         $verification_code = str_random(30); //Generate verification code
         DB::table('user_verifications')->insert(['user_id'=>$user->id,'token'=>$verification_code]);
         $subject = "Please verify your email address.";
