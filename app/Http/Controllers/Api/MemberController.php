@@ -4,11 +4,19 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\UserRole;
 
 class MemberController extends Controller
 {
     public function doActivateMember($userId){
         $user = User::find($userId);
+
+        if(UserRole::where('user_id', $userId)->first() === null){
+            $userRoles = new UserRole;
+            $userRoles->user_id = $userId;
+            $userRoles->role_id = 2;
+            $userRoles->save();
+        }
 
         if($user->doActiveMember()){
             return response()->json("Succesfull Activating Member", 200);
