@@ -58,6 +58,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'jwt.auth' => 'Tymon\JWTAuth\Middleware\GetUserFromToken',
         'jwt.refresh' => 'Tymon\JWTAuth\Middleware\RefreshToken',
-        'jwt' => 'App\Http\Middleware\JWTMiddleware'
+        'jwt' => \App\Http\Middleware\JWTMiddleware::class,
+        'role' => \App\Http\Middleware\RoleMiddleware::class
     ];
 }

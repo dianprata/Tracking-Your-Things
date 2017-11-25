@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Tymon\JWTAuth\Facades\JWTAuth;
-use Auth;
 
 class JWTMiddleware
 {
@@ -15,11 +14,12 @@ class JWTMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
+
      public function handle($request, Closure $next)
      {
          $token = $request->cookie('token');
          if($token == ""){
-             return response()->json('token required.',403);
+             return redirect('/');
          }
          try {
              $user = JWTAuth::authenticate($token);

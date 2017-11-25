@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+use Illuminate\Contracts\Auth\Authenticatable;
 use JWTAuth;
 use Auth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Validator;
+use App\Helper\JWTHelper;
 use Cookie;
 use DB, Hash, Mail;
 use Illuminate\Support\Facades\Password;
@@ -17,6 +19,10 @@ use Illuminate\Mail\Message;
 
 class AuthController extends Controller
 {
+    public function index(){
+        return view('login');
+    }
+
     public function register(Request $request)
     {
         $rules = [
@@ -107,7 +113,14 @@ class AuthController extends Controller
         if($isVerified){
             $user = User::where('email',$request->email)->firstOrFail();
             $token = JWTHelper::encodeUser($user);
-            return response()->json(['success' => true, 'data'=> [ 'token' => $token ]])->withCookie('token',$token,null,null,null,false,false);
+            $login = Auth::loginUsingId($user->id, true);
+
+            if($login->hasRole('Admin') === true){
+            return redirect('admin')->withCookie('token',$token,null,null,null,false,false);
+        } elseif($login->hasRole('Member') === true){
+            return redirect('member')->withCookie('token',$token,null,null,null,false,false);
+        }
+
         } else {
             return response()->json(['success' => false, 'error' => 'Invalid Credentials. Please make sure you entered the right information and you have verified your email address.'], 401);
         }
