@@ -29,7 +29,7 @@ class User extends Authenticatable
 
     public function doActiveMember(){
         if($this->is_verified === 1){
-            $this->active = 0;
+            $this->active = 1;
             $this->save();
             return true;
         } else {
