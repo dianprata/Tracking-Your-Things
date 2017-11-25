@@ -24,13 +24,8 @@ export default {
             icon: 'icon-puzzle',
             children: [
                 {
-                    name: 'Verify',
-                    url: '/member/verify',
-                    icon: 'icon-puzzle'
-                },
-                {
-                    name: 'Deactive',
-                    url: '/belajar-react/show',
+                    name: 'Verify & Deactive',
+                    url: '/member/verify-and-deactive',
                     icon: 'icon-puzzle'
                 }
             ]

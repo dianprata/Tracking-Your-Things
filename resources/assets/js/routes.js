@@ -2,7 +2,7 @@ const routes = {
   '/': 'Home',
   '/dashboard': 'Dashboard',
   '/member': 'Member',
-  '/member/verify': 'Member Verify',
+  '/member/verify-and-deactive': 'Member Verify and Deactive',
   '/components': 'Components',
   '/charts': 'Charts',
   '/components/buttons': 'Buttons',

@@ -20,8 +20,10 @@ Route::get('logout', 'AuthController@logout');
 
 Route::group(['middleware' => ['jwt.auth']], function() {
     Route::get('user/activate/{userId}', 'Api\MemberController@doActivateMember');
-    Route::get('user/deactive/{userId}', 'Api\MemberController@doDeactiveMember');
-    Route::get('member/unverified', 'Api\MemberController@getMemberUnverified');
+    Route::get('user/unverify/{userId}', 'Api\MemberController@doUnverifyMember');
+    Route::get('user/deactive/{userId}', 'Api\MemberController@doDeactive');
+    Route::get('member/unactive', 'Api\MemberController@getMemberUnactive');
+    Route::get('member/active', 'Api\MemberController@getMemberActive');
     Route::get('test', function(){
         return response()->json(['foo'=>'bar']);
     });

@@ -18,9 +18,27 @@ import Tables from '../../views/Components/Tables/';
 import Tabs from '../../views/Components/Tabs/';
 import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
-import memberVerify from '../../views/member/Verify';
+import memberVerify from '../../views/Components/Member/Verify';
+import Cookies from 'universal-cookie';
+import localStorage from "localStorage";
+
 
 class Full extends Component {
+    constructor(props){
+        super(props);
+    }
+
+    componentWillMount(){
+        this.getCookie();
+    }
+
+    getCookie(){
+        const cookies = new Cookies();
+        let getCookies = cookies.get('token');
+
+        localStorage.setItem('sessionStorage', getCookies);
+    }
+
     render() {
         return (
             <div className="app">
@@ -32,7 +50,7 @@ class Full extends Component {
                         <Container fluid>
                             <Switch>
                                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
-                                <Route path="/member/verify" name="Member Verify" component={memberVerify} />
+                                <Route path="/member/verify-and-deactive" name="Member Verify & Deactive" component={memberVerify} />
                                 <Route path="/components/buttons" name="Buttons" component={Buttons}/>
                                 <Route path="/components/cards" name="Cards" component={Cards}/>
                                 <Route path="/components/forms" name="Forms" component={Forms}/>
