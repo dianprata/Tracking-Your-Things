@@ -40,6 +40,33 @@ export default {
             class: ""             // optional class names space delimited list for title item ex: "text-center"
         },
         {
+            name: 'Trings',
+            url: '/trings',
+            icon: 'icon-puzzle',
+            children: [
+                {
+                    name: 'Product',
+                    url: '/trings/product',
+                    icon: 'icon-puzzle'
+                },
+                {
+                    name: 'Category',
+                    url: '/trings/category',
+                    icon: 'icon-puzzle'
+                },
+                {
+                    name: 'Shipping',
+                    url: '/trings/shipping',
+                    icon: 'icon-puzzle'
+                },
+                {
+                    name: 'History',
+                    url: '/trings/history',
+                    icon: 'icon-puzzle'
+                }
+            ]
+        },
+        {
             title: true,
             name: 'Extras'
         },

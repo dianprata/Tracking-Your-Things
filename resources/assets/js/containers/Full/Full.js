@@ -19,6 +19,10 @@ import Tabs from '../../views/Components/Tabs/';
 import FontAwesome from '../../views/Icons/FontAwesome/';
 import SimpleLineIcons from '../../views/Icons/SimpleLineIcons/';
 import memberVerify from '../../views/Components/Member/Verify';
+import productTrings from '../../views/Components/Trings/Product';
+import categoryTrings from '../../views/Components/Trings/Category';
+import shippingTrings from '../../views/Components/Trings/Shipping';
+import historyTrings from '../../views/Components/Trings/History';
 import Cookies from 'universal-cookie';
 import localStorage from "localStorage";
 
@@ -51,6 +55,10 @@ class Full extends Component {
                             <Switch>
                                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
                                 <Route path="/member/verify-and-deactive" name="Member Verify & Deactive" component={memberVerify} />
+                                <Route path="/trings/product" name="Trings Product" component={productTrings}/>
+                                <Route path="/trings/category" name="Trings Category" component={categoryTrings}/>
+                                <Route path="/trings/shipping" name="Trings Shipping" component={shippingTrings}/>
+                                <Route path="/trings/history" name="Trings History" component={historyTrings}/>
                                 <Route path="/components/buttons" name="Buttons" component={Buttons}/>
                                 <Route path="/components/cards" name="Cards" component={Cards}/>
                                 <Route path="/components/forms" name="Forms" component={Forms}/>

@@ -44128,10 +44128,14 @@ NavLink.defaultProps = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__views_Icons_FontAwesome___ = __webpack_require__(431);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__views_Icons_SimpleLineIcons___ = __webpack_require__(432);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__views_Components_Member_Verify__ = __webpack_require__(449);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_universal_cookie__ = __webpack_require__(434);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_universal_cookie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_universal_cookie__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_localStorage__ = __webpack_require__(447);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_localStorage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_localStorage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__views_Components_Trings_Product__ = __webpack_require__(480);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__views_Components_Trings_Category__ = __webpack_require__(481);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__views_Components_Trings_Shipping__ = __webpack_require__(482);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__views_Components_Trings_History__ = __webpack_require__(483);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_universal_cookie__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_universal_cookie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25_universal_cookie__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_localStorage__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_localStorage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26_localStorage__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44139,6 +44143,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
 
 
 
@@ -44181,10 +44189,10 @@ var Full = function (_Component) {
     }, {
         key: 'getCookie',
         value: function getCookie() {
-            var cookies = new __WEBPACK_IMPORTED_MODULE_21_universal_cookie___default.a();
+            var cookies = new __WEBPACK_IMPORTED_MODULE_25_universal_cookie___default.a();
             var getCookies = cookies.get('token');
 
-            __WEBPACK_IMPORTED_MODULE_22_localStorage___default.a.setItem('sessionStorage', getCookies);
+            __WEBPACK_IMPORTED_MODULE_26_localStorage___default.a.setItem('sessionStorage', getCookies);
         }
     }, {
         key: 'render',
@@ -44209,6 +44217,10 @@ var Full = function (_Component) {
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["e" /* Route */], { path: '/dashboard', name: 'Dashboard', component: __WEBPACK_IMPORTED_MODULE_7__views_Dashboard___["a" /* default */] }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["e" /* Route */], { path: '/member/verify-and-deactive', name: 'Member Verify & Deactive', component: __WEBPACK_IMPORTED_MODULE_20__views_Components_Member_Verify__["a" /* default */] }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["e" /* Route */], { path: '/trings/product', name: 'Trings Product', component: __WEBPACK_IMPORTED_MODULE_21__views_Components_Trings_Product__["a" /* default */] }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["e" /* Route */], { path: '/trings/category', name: 'Trings Category', component: __WEBPACK_IMPORTED_MODULE_22__views_Components_Trings_Category__["a" /* default */] }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["e" /* Route */], { path: '/trings/shipping', name: 'Trings Shipping', component: __WEBPACK_IMPORTED_MODULE_23__views_Components_Trings_Shipping__["a" /* default */] }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["e" /* Route */], { path: '/trings/history', name: 'Trings History', component: __WEBPACK_IMPORTED_MODULE_24__views_Components_Trings_History__["a" /* default */] }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["e" /* Route */], { path: '/components/buttons', name: 'Buttons', component: __WEBPACK_IMPORTED_MODULE_10__views_Components_Buttons___["a" /* default */] }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["e" /* Route */], { path: '/components/cards', name: 'Cards', component: __WEBPACK_IMPORTED_MODULE_11__views_Components_Cards___["a" /* default */] }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["e" /* Route */], { path: '/components/forms', name: 'Forms', component: __WEBPACK_IMPORTED_MODULE_12__views_Components_Forms___["a" /* default */] }),
@@ -44732,6 +44744,27 @@ var Sidebar = function (_Component) {
         },
         class: "" // optional class names space delimited list for title item ex: "text-center"
     }, {
+        name: 'Trings',
+        url: '/trings',
+        icon: 'icon-puzzle',
+        children: [{
+            name: 'Product',
+            url: '/trings/product',
+            icon: 'icon-puzzle'
+        }, {
+            name: 'Category',
+            url: '/trings/category',
+            icon: 'icon-puzzle'
+        }, {
+            name: 'Shipping',
+            url: '/trings/shipping',
+            icon: 'icon-puzzle'
+        }, {
+            name: 'History',
+            url: '/trings/history',
+            icon: 'icon-puzzle'
+        }]
+    }, {
         title: true,
         name: 'Extras'
     }, {
@@ -44921,6 +44954,11 @@ var routes = {
   '/dashboard': 'Dashboard',
   '/member': 'Member',
   '/member/verify-and-deactive': 'Member Verify and Deactive',
+  '/trings': 'Trings',
+  '/trings/product': 'Product',
+  '/trings/category': 'Category',
+  '/trings/shipping': 'Shipping',
+  '/trings/history': 'History',
   '/components': 'Components',
   '/charts': 'Charts',
   '/components/buttons': 'Buttons',
@@ -83646,7 +83684,7 @@ module.exports = Cancel;
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = getRequest;
-/* unused harmony export postRequest */
+/* harmony export (immutable) */ __webpack_exports__["b"] = postRequest;
 /* unused harmony export putRequest */
 /* unused harmony export deleteRequest */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(458);
@@ -90451,6 +90489,1332 @@ exports.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(107), __webpack_require__(27)))
+
+/***/ }),
+/* 480 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_reactstrap__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helper_network__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_number_format__ = __webpack_require__(484);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_number_format___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_number_format__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var Product = function (_Component) {
+    _inherits(Product, _Component);
+
+    function Product(props) {
+        _classCallCheck(this, Product);
+
+        var _this = _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).call(this, props));
+
+        _this.state = {
+            category: [],
+            product: [],
+            name: "",
+            category_id: "",
+            price: "",
+            quantity: ""
+        };
+        return _this;
+    }
+
+    _createClass(Product, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            this.fetchCategory();
+            this.fetchProduct();
+        }
+    }, {
+        key: "fetchCategory",
+        value: function fetchCategory() {
+            var _this2 = this;
+
+            Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["a" /* getRequest */])('/api/category/show', function (res) {
+                _this2.setState({ category: res.data });
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: "fetchProduct",
+        value: function fetchProduct() {
+            var _this3 = this;
+
+            Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["a" /* getRequest */])('/api/product/showProduct', function (res) {
+                _this3.setState({ product: res.data });
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: "onChangeNameProduct",
+        value: function onChangeNameProduct(e) {
+            this.setState({ name: e.target.value });
+        }
+    }, {
+        key: "onChangeCategoryId",
+        value: function onChangeCategoryId(e) {
+            this.setState({ category_id: e.target.value });
+        }
+    }, {
+        key: "onChangePrice",
+        value: function onChangePrice(e, values) {
+            var formattedValue = values.formattedValue,
+                value = values.value;
+
+            this.setState({ price: value });
+        }
+    }, {
+        key: "onChangeQuantity",
+        value: function onChangeQuantity(e) {
+            this.setState({ quantity: e.target.value });
+        }
+    }, {
+        key: "doCreateProduct",
+        value: function doCreateProduct() {
+            var payload = {
+                name: this.state.name,
+                category_id: this.state.category_id,
+                price: this.state.price,
+                quantity: this.state.quantity
+            };
+            Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["b" /* postRequest */])('/api/product/create', payload, function (res) {
+                console.log(res);
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "animated fadeIn" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["p" /* Col */],
+                    { xs: "12", sm: "12" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_1_reactstrap__["i" /* Card */],
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["n" /* CardHeader */],
+                            null,
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "strong",
+                                null,
+                                "Product"
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "small",
+                                null,
+                                " Form"
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["j" /* CardBlock */],
+                            { className: "card-body" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["w" /* FormGroup */],
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
+                                    { htmlFor: "name" },
+                                    "Name Product"
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "name", onChange: this.onChangeNameProduct.bind(this), placeholder: "Enter your product name" })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["w" /* FormGroup */],
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
+                                    { htmlFor: "category" },
+                                    "Category"
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */],
+                                    { type: "select", name: "category", onChange: this.onChangeCategoryId.bind(this), id: "select" },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "option",
+                                        null,
+                                        "Please Select Category"
+                                    ),
+                                    this.state.category.map(function (category) {
+                                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "option",
+                                            { key: category.id.toString(), value: category.id },
+                                            category.name
+                                        );
+                                    })
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["w" /* FormGroup */],
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
+                                    { htmlFor: "price" },
+                                    "Price, 1 Quantity"
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_number_format___default.a, { className: "form-control", required: true, placeholder: "Enter price, 1 quantity", value: this.state.price, thousandSeparator: true, prefix: 'Rp ', onChange: this.onChangePrice.bind(this) })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["w" /* FormGroup */],
+                                { row: true },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["p" /* Col */],
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_1_reactstrap__["w" /* FormGroup */],
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
+                                            { htmlFor: "quantity" },
+                                            "Quantity"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "quantity", onChange: this.onChangeQuantity.bind(this), placeholder: "Enter your quantity" })
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["w" /* FormGroup */],
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
+                                    { color: "success", onClick: this.doCreateProduct.bind(this) },
+                                    "Create"
+                                )
+                            )
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["p" /* Col */],
+                    { xs: "12", lg: "12" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_1_reactstrap__["i" /* Card */],
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["n" /* CardHeader */],
+                            null,
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-align-justify" }),
+                            " Active Product"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["j" /* CardBlock */],
+                            { className: "card-body" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["S" /* Table */],
+                                { responsive: true, striped: true },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "thead",
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "tr",
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "th",
+                                            null,
+                                            "Name Product"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "th",
+                                            null,
+                                            "Category"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "th",
+                                            null,
+                                            "Price"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "th",
+                                            null,
+                                            "Quantity"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "th",
+                                            null,
+                                            "Action"
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "tbody",
+                                    null,
+                                    this.state.product.map(function (product) {
+                                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "tr",
+                                            { key: product.id },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "td",
+                                                null,
+                                                product.name
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "td",
+                                                null,
+                                                product.get_category.name
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "td",
+                                                null,
+                                                product.price
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "td",
+                                                null,
+                                                product.quantity
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "td",
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
+                                                    { color: "success", id: product.id },
+                                                    "Verify"
+                                                ),
+                                                " ",
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
+                                                    { color: "warning", id: product.id },
+                                                    "Decline"
+                                                )
+                                            )
+                                        );
+                                    })
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Product;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Product);
+
+/***/ }),
+/* 481 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_reactstrap__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helper_network__ = __webpack_require__(457);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var Category = function (_Component) {
+    _inherits(Category, _Component);
+
+    function Category(props) {
+        _classCallCheck(this, Category);
+
+        var _this = _possibleConstructorReturn(this, (Category.__proto__ || Object.getPrototypeOf(Category)).call(this, props));
+
+        _this.state = {
+            name: "",
+            nameEdit: "",
+            categoryId: "",
+            category: [],
+            modal: false
+        };
+
+        _this.toggle = _this.toggle.bind(_this);
+        return _this;
+    }
+
+    _createClass(Category, [{
+        key: "toggle",
+        value: function toggle() {
+            this.setState({
+                modal: !this.state.modal
+            });
+        }
+    }, {
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            this.fetchCategory();
+        }
+    }, {
+        key: "onChangeCategoryName",
+        value: function onChangeCategoryName(e) {
+            this.setState({ name: e.target.value });
+        }
+    }, {
+        key: "onChangeCategoryNameEdit",
+        value: function onChangeCategoryNameEdit(e) {
+            this.setState({ nameEdit: e.target.value });
+        }
+    }, {
+        key: "doCreateCategory",
+        value: function doCreateCategory() {
+            var _this2 = this;
+
+            var payload = {
+                name: this.state.name
+            };
+            Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["b" /* postRequest */])('/api/category/create', payload, function (res) {
+                _this2.fetchCategory();
+                console.log(res);
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: "doDestroyCategory",
+        value: function doDestroyCategory(e) {
+            var _this3 = this;
+
+            var payload = {
+                id: e.target.id
+            };
+            Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["a" /* getRequest */])('/api/category/destroy/' + payload.id, function (res) {
+                _this3.fetchCategory();
+                console.log(res);
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: "doEditCategory",
+        value: function doEditCategory() {
+            var _this4 = this;
+
+            this.setState({
+                modal: !this.state.modal
+            });
+            var payload = {
+                id: this.state.categoryId,
+                name: this.state.nameEdit
+            };
+            Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["b" /* postRequest */])('/api/category/edit/' + payload.id, payload, function (res) {
+                _this4.fetchCategory();
+                console.log(res);
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: "fetchCategory",
+        value: function fetchCategory() {
+            var _this5 = this;
+
+            Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["a" /* getRequest */])('/api/category/show', function (res) {
+                _this5.setState({ category: res.data });
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: "getCategoryId",
+        value: function getCategoryId(e) {
+            this.setState({
+                categoryId: e.target.id,
+                modal: !this.state.modal
+            });
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var _this6 = this;
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "animated fadeIn" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["p" /* Col */],
+                    { xs: "12", sm: "12" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_1_reactstrap__["i" /* Card */],
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["n" /* CardHeader */],
+                            null,
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "strong",
+                                null,
+                                "Category"
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "small",
+                                null,
+                                " Form"
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["j" /* CardBlock */],
+                            { className: "card-body" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["w" /* FormGroup */],
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
+                                    { htmlFor: "name" },
+                                    "Category Name"
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "name", placeholder: "Enter your category name", onChange: this.onChangeCategoryName.bind(this) })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["w" /* FormGroup */],
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
+                                    { color: "success", onClick: this.doCreateCategory.bind(this) },
+                                    "Create"
+                                )
+                            )
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["p" /* Col */],
+                    { xs: "12", lg: "12" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_1_reactstrap__["i" /* Card */],
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["n" /* CardHeader */],
+                            null,
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "fa fa-align-justify" }),
+                            " Active Category"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["j" /* CardBlock */],
+                            { className: "card-body" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["S" /* Table */],
+                                { responsive: true, striped: true },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "thead",
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "tr",
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "th",
+                                            null,
+                                            "Name"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "th",
+                                            null,
+                                            "Action"
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "tbody",
+                                    null,
+                                    this.state.category.map(function (category) {
+                                        var _React$createElement, _React$createElement2;
+
+                                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "tr",
+                                            { key: category.id },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "td",
+                                                null,
+                                                category.name
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "td",
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
+                                                    { onClick: _this6.getCategoryId.bind(_this6), id: category.id, color: "warning" },
+                                                    "Edit"
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["D" /* Modal */],
+                                                    { isOpen: _this6.state.modal, toggle: _this6.toggle, className: _this6.props.className },
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        __WEBPACK_IMPORTED_MODULE_1_reactstrap__["G" /* ModalHeader */],
+                                                        { toggle: _this6.toggle },
+                                                        "Edit Category"
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        __WEBPACK_IMPORTED_MODULE_1_reactstrap__["E" /* ModalBody */],
+                                                        null,
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["w" /* FormGroup */],
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
+                                                                { htmlFor: "name" },
+                                                                "Category Name"
+                                                            ),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "name", placeholder: "Enter your category name", onChange: _this6.onChangeCategoryNameEdit.bind(_this6) })
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        __WEBPACK_IMPORTED_MODULE_1_reactstrap__["F" /* ModalFooter */],
+                                                        null,
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
+                                                            (_React$createElement = { color: "primary" }, _defineProperty(_React$createElement, "color", "warning"), _defineProperty(_React$createElement, "onClick", _this6.doEditCategory.bind(_this6)), _React$createElement),
+                                                            "Edit"
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
+                                                            (_React$createElement2 = { color: "secondary" }, _defineProperty(_React$createElement2, "color", "primary"), _defineProperty(_React$createElement2, "onClick", _this6.toggle), _React$createElement2),
+                                                            "Cancel"
+                                                        )
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
+                                                    { color: "danger", id: category.id, onClick: _this6.doDestroyCategory.bind(_this6) },
+                                                    "Delete"
+                                                )
+                                            )
+                                        );
+                                    })
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Category;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Category);
+
+/***/ }),
+/* 482 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_reactstrap__ = __webpack_require__(5);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Shipping = function (_Component) {
+  _inherits(Shipping, _Component);
+
+  function Shipping() {
+    _classCallCheck(this, Shipping);
+
+    return _possibleConstructorReturn(this, (Shipping.__proto__ || Object.getPrototypeOf(Shipping)).apply(this, arguments));
+  }
+
+  _createClass(Shipping, [{
+    key: "render",
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "animated fadeIn" });
+    }
+  }]);
+
+  return Shipping;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Shipping);
+
+/***/ }),
+/* 483 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_reactstrap__ = __webpack_require__(5);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var History = function (_Component) {
+  _inherits(History, _Component);
+
+  function History() {
+    _classCallCheck(this, History);
+
+    return _possibleConstructorReturn(this, (History.__proto__ || Object.getPrototypeOf(History)).apply(this, arguments));
+  }
+
+  _createClass(History, [{
+    key: "render",
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "animated fadeIn" });
+    }
+  }]);
+
+  return History;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (History);
+
+/***/ }),
+/* 484 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _propTypes = __webpack_require__(9);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function noop() {}
+
+function escapeRegExp(str) {
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function removeLeadingZero(numStr) {
+  //remove leading zeros
+  return numStr.replace(/^0+/, '') || '0';
+}
+
+/**
+ * limit decimal numbers to given precision
+ * Not used .fixedTo because that will break with big numbers
+ */
+function limitToPrecision(numStr, precision) {
+  var str = '';
+  for (var i = 0; i <= precision - 1; i++) {
+    str += numStr[i] || '0';
+  }
+  return str;
+}
+
+/**
+ * This method is required to round prop value to given precision.
+ * Not used .round or .fixedTo because that will break with big numbers
+ */
+function roundToPrecision(numStr, precision) {
+  var numberParts = numStr.split('.');
+  var roundedDecimalParts = parseFloat('0.' + (numberParts[1] || '0')).toFixed(precision).split('.');
+  var intPart = numberParts[0].split('').reverse().reduce(function (roundedStr, current, idx) {
+    if (roundedStr.length > idx) {
+      return (Number(roundedStr[0]) + Number(current)).toString() + roundedStr.substring(1, roundedStr.length);
+    }
+    return current + roundedStr;
+  }, roundedDecimalParts[0]);
+
+  var decimalPart = roundedDecimalParts[1];
+
+  return intPart + (decimalPart ? '.' + decimalPart : '');
+}
+
+function omit(obj, keyMaps) {
+  var filteredObj = {};
+  Object.keys(obj).forEach(function (key) {
+    if (!keyMaps[key]) filteredObj[key] = obj[key];
+  });
+  return filteredObj;
+}
+
+var propTypes = {
+  thousandSeparator: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.oneOf([true])]),
+  decimalSeparator: _propTypes2.default.string,
+  decimalPrecision: _propTypes2.default.number,
+  displayType: _propTypes2.default.oneOf(['input', 'text']),
+  prefix: _propTypes2.default.string,
+  suffix: _propTypes2.default.string,
+  format: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.func]),
+  mask: _propTypes2.default.string,
+  value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
+  customInput: _propTypes2.default.func,
+  allowNegative: _propTypes2.default.bool,
+  onKeyDown: _propTypes2.default.func,
+  onMouseUp: _propTypes2.default.func,
+  onChange: _propTypes2.default.func,
+  type: _propTypes2.default.oneOf(['text', 'tel']),
+  isAllowed: _propTypes2.default.func
+};
+
+var defaultProps = {
+  displayType: 'input',
+  decimalSeparator: '.',
+  prefix: '',
+  suffix: '',
+  allowNegative: true,
+  type: 'text',
+  onChange: noop,
+  onKeyDown: noop,
+  onMouseUp: noop,
+  isAllowed: function isAllowed() {
+    return true;
+  }
+};
+
+var NumberFormat = function (_React$Component) {
+  _inherits(NumberFormat, _React$Component);
+
+  function NumberFormat(props) {
+    _classCallCheck(this, NumberFormat);
+
+    var _this = _possibleConstructorReturn(this, (NumberFormat.__proto__ || Object.getPrototypeOf(NumberFormat)).call(this, props));
+
+    var value = _this.optimizeValueProp(props);
+    _this.state = {
+      value: _this.formatInput(value).formattedValue
+    };
+    _this.onChange = _this.onChange.bind(_this);
+    _this.onKeyDown = _this.onKeyDown.bind(_this);
+    _this.onMouseUp = _this.onMouseUp.bind(_this);
+    return _this;
+  }
+
+  _createClass(NumberFormat, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      this.updateValueIfRequired(prevProps, prevState);
+    }
+  }, {
+    key: 'updateValueIfRequired',
+    value: function updateValueIfRequired(prevProps) {
+      var props = this.props,
+          state = this.state;
+
+
+      if (prevProps !== props) {
+        var stateValue = state.value;
+
+        var value = this.optimizeValueProp(props);
+        if (value === undefined) value = stateValue;
+
+        var _formatInput = this.formatInput(value),
+            formattedValue = _formatInput.formattedValue;
+
+        if (formattedValue !== stateValue) {
+          this.setState({
+            value: formattedValue
+          });
+        }
+      }
+    }
+  }, {
+    key: 'getFloatString',
+    value: function getFloatString(num, props) {
+      props = props || this.props;
+
+      var _getSeparators = this.getSeparators(props),
+          decimalSeparator = _getSeparators.decimalSeparator,
+          thousandSeparator = _getSeparators.thousandSeparator;
+
+      return (num || '').replace(new RegExp(escapeRegExp(thousandSeparator || ''), 'g'), '').replace(decimalSeparator, '.');
+    }
+  }, {
+    key: 'getFloatValue',
+    value: function getFloatValue(num, props) {
+      props = props || this.props;
+      return parseFloat(this.getFloatString(num, props)) || 0;
+    }
+  }, {
+    key: 'optimizeValueProp',
+    value: function optimizeValueProp(props) {
+      var _getSeparators2 = this.getSeparators(props),
+          decimalSeparator = _getSeparators2.decimalSeparator;
+
+      var decimalPrecision = props.decimalPrecision,
+          format = props.format;
+      var value = props.value;
+
+
+      if (format || !(value || value === 0)) return value;
+
+      var isNumber = typeof value === 'number';
+
+      if (isNumber) value = value.toString();
+
+      value = this.removePrefixAndSuffix(isNumber ? value : this.getFloatString(value, props), props);
+
+      //round off value
+      if (typeof decimalPrecision === 'number') value = roundToPrecision(value, decimalPrecision);
+
+      //correct decimal separator
+      if (decimalSeparator) {
+        value = value.replace('.', decimalSeparator);
+      }
+
+      //throw error if value has two decimal seperators
+      if (value.split(decimalSeparator).length > 2) {
+        throw new Error('\n          Wrong input for value props.\n\n          More than one decimalSeparator found\n       ');
+      }
+
+      //if decimalPrecision is 0 remove decimalNumbers
+      if (decimalPrecision === 0) return value.split(decimalSeparator)[0];
+
+      return value;
+    }
+  }, {
+    key: 'removePrefixAndSuffix',
+    value: function removePrefixAndSuffix(val, props) {
+      var format = props.format,
+          prefix = props.prefix,
+          suffix = props.suffix;
+
+      //remove prefix and suffix
+
+      if (!format && val) {
+        var isNegative = val[0] === '-';
+
+        //remove negation sign
+        if (isNegative) val = val.substring(1, val.length);
+
+        //remove prefix
+        val = prefix && val.indexOf(prefix) === 0 ? val.substring(prefix.length, val.length) : val;
+
+        //remove suffix
+        var suffixLastIndex = val.lastIndexOf(suffix);
+        val = suffix && suffixLastIndex !== -1 && suffixLastIndex === val.length - suffix.length ? val.substring(0, suffixLastIndex) : val;
+
+        //add negation sign back
+        if (isNegative) val = '-' + val;
+      }
+
+      return val;
+    }
+  }, {
+    key: 'getSeparators',
+    value: function getSeparators(props) {
+      props = props || this.props;
+
+      var _props = props,
+          decimalSeparator = _props.decimalSeparator;
+      var _props2 = props,
+          thousandSeparator = _props2.thousandSeparator;
+
+
+      if (thousandSeparator === true) {
+        thousandSeparator = ',';
+      }
+
+      if (decimalSeparator === thousandSeparator) {
+        throw new Error('\n          Decimal separator can\'t be same as thousand separator.\n\n          thousandSeparator: ' + thousandSeparator + ' (thousandSeparator = {true} is same as thousandSeparator = ",")\n          decimalSeparator: ' + decimalSeparator + ' (default value for decimalSeparator is .)\n       ');
+      }
+
+      return {
+        decimalSeparator: decimalSeparator,
+        thousandSeparator: thousandSeparator
+      };
+    }
+  }, {
+    key: 'getNumberRegex',
+    value: function getNumberRegex(g, ignoreDecimalSeparator) {
+      var _props3 = this.props,
+          format = _props3.format,
+          decimalPrecision = _props3.decimalPrecision;
+
+      var _getSeparators3 = this.getSeparators(),
+          decimalSeparator = _getSeparators3.decimalSeparator;
+
+      return new RegExp('\\d' + (decimalSeparator && decimalPrecision !== 0 && !ignoreDecimalSeparator && !format ? '|' + escapeRegExp(decimalSeparator) : ''), g ? 'g' : undefined);
+    }
+  }, {
+    key: 'setCaretPosition',
+    value: function setCaretPosition(el, caretPos) {
+      el.value = el.value;
+      // ^ this is used to not only get "focus", but
+      // to make sure we don't have it everything -selected-
+      // (it causes an issue in chrome, and having it doesn't hurt any other browser)
+      if (el !== null) {
+        if (el.createTextRange) {
+          var range = el.createTextRange();
+          range.move('character', caretPos);
+          range.select();
+          return true;
+        }
+        // (el.selectionStart === 0 added for Firefox bug)
+        if (el.selectionStart || el.selectionStart === 0) {
+          el.focus();
+          el.setSelectionRange(caretPos, caretPos);
+          return true;
+        }
+
+        // fail city, fortunately this never happens (as far as I've tested) :)
+        el.focus();
+        return false;
+      }
+    }
+  }, {
+    key: 'setPatchedCaretPosition',
+    value: function setPatchedCaretPosition(el, caretPos, currentValue) {
+      var _this2 = this;
+
+      /*
+      setting caret position within timeout of 0ms is required for mobile chrome,
+      otherwise browser resets the caret position after we set it
+      We are also setting it without timeout so that in normal browser we don't see the flickering
+      */
+      this.setCaretPosition(el, caretPos);
+      setTimeout(function () {
+        if (el.value === currentValue) _this2.setCaretPosition(el, caretPos);
+      }, 0);
+    }
+
+    /* This keeps the caret within typing area so people can't type in between prefix or suffix */
+
+  }, {
+    key: 'correctCaretPosition',
+    value: function correctCaretPosition(value, caretPos) {
+      var _props4 = this.props,
+          prefix = _props4.prefix,
+          suffix = _props4.suffix;
+
+      return Math.min(Math.max(caretPos, prefix.length), value.length - suffix.length);
+    }
+  }, {
+    key: 'formatWithPattern',
+    value: function formatWithPattern(str) {
+      var _props5 = this.props,
+          format = _props5.format,
+          mask = _props5.mask;
+
+      if (!format) return str;
+      var hashCount = format.split('#').length - 1;
+      var hashIdx = 0;
+      var frmtdStr = format;
+
+      for (var i = 0, ln = str.length; i < ln; i++) {
+        if (i < hashCount) {
+          hashIdx = frmtdStr.indexOf('#');
+          frmtdStr = frmtdStr.replace('#', str[i]);
+        }
+      }
+
+      var lastIdx = frmtdStr.lastIndexOf('#');
+
+      if (mask) {
+        return frmtdStr.replace(/#/g, mask);
+      }
+      return frmtdStr.substring(0, hashIdx + 1) + (lastIdx !== -1 ? frmtdStr.substring(lastIdx + 1, frmtdStr.length) : '');
+    }
+  }, {
+    key: 'formatInput',
+    value: function formatInput(val) {
+      var props = this.props,
+          removePrefixAndSuffix = this.removePrefixAndSuffix;
+      var prefix = props.prefix,
+          suffix = props.suffix,
+          mask = props.mask,
+          format = props.format,
+          allowNegative = props.allowNegative,
+          decimalPrecision = props.decimalPrecision;
+
+      var _getSeparators4 = this.getSeparators(),
+          thousandSeparator = _getSeparators4.thousandSeparator,
+          decimalSeparator = _getSeparators4.decimalSeparator;
+
+      var maskPattern = format && typeof format == 'string' && !!mask;
+      var numRegex = this.getNumberRegex(true);
+      var hasNegative = void 0,
+          removeNegative = void 0;
+
+      //change val to string if its number
+      if (typeof val === 'number') val = val + '';
+
+      var negativeRegex = new RegExp('(-)');
+      var doubleNegativeRegex = new RegExp('(-)(.)*(-)');
+
+      //check if it has negative numbers
+      if (allowNegative && !format) {
+        // Check number has '-' value
+        hasNegative = negativeRegex.test(val);
+        // Check number has 2 or more '-' values
+        removeNegative = doubleNegativeRegex.test(val);
+      }
+
+      //remove prefix and suffix
+      val = removePrefixAndSuffix(val, props);
+
+      var valMatch = val && val.match(numRegex);
+
+      if (!valMatch && removeNegative) {
+        return { value: '', formattedValue: '' };
+      } else if (!valMatch && hasNegative) {
+        return { value: '', formattedValue: '-' };
+      } else if (!valMatch) {
+        return { value: '', formattedValue: maskPattern ? '' : '' };
+      }
+
+      var num = val.match(numRegex).join('');
+
+      var formattedValue = num;
+
+      if (format) {
+        if (typeof format == 'string') {
+          formattedValue = this.formatWithPattern(formattedValue);
+        } else if (typeof format == 'function') {
+          formattedValue = format(formattedValue);
+        }
+      } else {
+        var hasDecimalSeparator = formattedValue.indexOf(decimalSeparator) !== -1 || decimalPrecision;
+
+        var parts = formattedValue.split(decimalSeparator);
+        var beforeDecimal = parts[0];
+        var afterDecimal = parts[1] || '';
+
+        //remove leading zeros from number before decimal
+        beforeDecimal = removeLeadingZero(beforeDecimal);
+
+        //apply decimal precision if its defined
+        if (decimalPrecision !== undefined) afterDecimal = limitToPrecision(afterDecimal, decimalPrecision);
+
+        if (thousandSeparator) {
+          beforeDecimal = beforeDecimal.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + thousandSeparator);
+        }
+
+        //add prefix and suffix
+        if (prefix) beforeDecimal = prefix + beforeDecimal;
+        if (suffix) afterDecimal = afterDecimal + suffix;
+
+        if (hasNegative && !removeNegative) beforeDecimal = '-' + beforeDecimal;
+
+        formattedValue = beforeDecimal + (hasDecimalSeparator && decimalSeparator || '') + afterDecimal;
+      }
+
+      return {
+        value: (hasNegative && !removeNegative ? '-' : '') + removePrefixAndSuffix(formattedValue, props).match(numRegex).join(''),
+        formattedValue: formattedValue
+      };
+    }
+  }, {
+    key: 'getCaretPosition',
+    value: function getCaretPosition(inputValue, formattedValue, caretPos) {
+      var numRegex = this.getNumberRegex(true);
+      var inputNumber = (inputValue.match(numRegex) || []).join('');
+      var formattedNumber = (formattedValue.match(numRegex) || []).join('');
+      var j = void 0,
+          i = void 0;
+
+      j = 0;
+
+      for (i = 0; i < caretPos; i++) {
+        var currentInputChar = inputValue[i];
+        var currentFormatChar = formattedValue[j] || '';
+        //no need to increase new cursor position if formatted value does not have those characters
+        //case inputValue = 1a23 and formattedValue =  123
+        if (!currentInputChar.match(numRegex) && currentInputChar !== currentFormatChar) continue;
+
+        //When we are striping out leading zeros maintain the new cursor position
+        //Case inputValue = 00023 and formattedValue = 23;
+        if (currentInputChar === '0' && currentFormatChar.match(numRegex) && currentFormatChar !== '0' && inputNumber.length !== formattedNumber.length) continue;
+
+        //we are not using currentFormatChar because j can change here
+        while (currentInputChar !== formattedValue[j] && !(formattedValue[j] || '').match(numRegex) && j < formattedValue.length) {
+          j++;
+        }j++;
+      }
+
+      //correct caret position if its outsize of editable area
+      j = this.correctCaretPosition(formattedValue, j);
+
+      return j;
+    }
+  }, {
+    key: 'onChange',
+    value: function onChange(e) {
+      e.persist();
+      var el = e.target;
+      var inputValue = el.value;
+      var state = this.state,
+          props = this.props;
+      var isAllowed = props.isAllowed;
+
+      var lastValue = state.value;
+
+      var _formatInput2 = this.formatInput(inputValue),
+          formattedValue = _formatInput2.formattedValue,
+          value = _formatInput2.value; // eslint-disable-line prefer-const
+
+      /*Max of selectionStart and selectionEnd is taken for the patch of pixel and other mobile device caret bug*/
+
+
+      var currentCaretPosition = Math.max(el.selectionStart, el.selectionEnd);
+
+      var valueObj = {
+        formattedValue: formattedValue,
+        value: value,
+        floatValue: this.getFloatValue(value)
+      };
+
+      if (!isAllowed(valueObj)) {
+        formattedValue = lastValue;
+      }
+
+      //set the value imperatively, this is required for IE fix
+      el.value = formattedValue;
+
+      //get the caret position
+      var caretPos = this.getCaretPosition(inputValue, formattedValue, currentCaretPosition);
+
+      //set caret position
+      this.setPatchedCaretPosition(el, caretPos, formattedValue);
+
+      //change the state
+      if (formattedValue !== lastValue) {
+        this.setState({ value: formattedValue }, function () {
+          props.onChange(e, valueObj);
+        });
+      }
+
+      return value;
+    }
+  }, {
+    key: 'onKeyDown',
+    value: function onKeyDown(e) {
+      var el = e.target;
+      var selectionEnd = el.selectionEnd,
+          value = el.value;
+      var selectionStart = el.selectionStart;
+      var _props6 = this.props,
+          decimalPrecision = _props6.decimalPrecision,
+          prefix = _props6.prefix,
+          suffix = _props6.suffix;
+      var key = e.key;
+
+      var numRegex = this.getNumberRegex(false, decimalPrecision !== undefined);
+      var negativeRegex = new RegExp('-');
+
+      //Handle backspace and delete against non numerical/decimal characters
+      if (selectionStart === selectionEnd) {
+        var newCaretPosition = selectionStart;
+
+        if (key === 'ArrowLeft' || key === 'ArrowRight') {
+          selectionStart += key === 'ArrowLeft' ? -1 : +1;
+          newCaretPosition = this.correctCaretPosition(value, selectionStart);
+        } else if (key === 'Delete' && !numRegex.test(value[selectionStart]) && !negativeRegex.test(value[selectionStart])) {
+          while (!numRegex.test(value[newCaretPosition]) && newCaretPosition < value.length - suffix.length) {
+            newCaretPosition++;
+          }
+        } else if (key === 'Backspace' && !numRegex.test(value[selectionStart - 1]) && !negativeRegex.test(value[selectionStart - 1])) {
+          while (!numRegex.test(value[newCaretPosition - 1]) && newCaretPosition > prefix.length) {
+            newCaretPosition--;
+          }
+        }
+
+        if (newCaretPosition !== selectionStart) {
+          e.preventDefault();
+          this.setPatchedCaretPosition(el, newCaretPosition, value);
+        }
+      }
+
+      this.props.onKeyDown(e);
+    }
+  }, {
+    key: 'onMouseUp',
+    value: function onMouseUp(e) {
+      var el = e.target;
+      var selectionStart = el.selectionStart,
+          selectionEnd = el.selectionEnd,
+          value = el.value;
+
+
+      if (selectionStart === selectionEnd) {
+        var caretPostion = this.correctCaretPosition(value, selectionStart);
+        if (caretPostion !== selectionStart) {
+          this.setPatchedCaretPosition(el, caretPostion, value);
+        }
+      }
+
+      this.props.onMouseUp(e);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var props = omit(this.props, propTypes);
+
+      var inputProps = _extends({}, props, {
+        type: this.props.type,
+        value: this.state.value,
+        onChange: this.onChange,
+        onKeyDown: this.onKeyDown,
+        onMouseUp: this.onMouseUp
+      });
+
+      if (this.props.displayType === 'text') {
+        return _react2.default.createElement(
+          'span',
+          props,
+          this.state.value
+        );
+      } else if (this.props.customInput) {
+        var CustomInput = this.props.customInput;
+        return _react2.default.createElement(CustomInput, inputProps);
+      }
+
+      return _react2.default.createElement('input', inputProps);
+    }
+  }]);
+
+  return NumberFormat;
+}(_react2.default.Component);
+
+NumberFormat.propTypes = propTypes;
+NumberFormat.defaultProps = defaultProps;
+
+module.exports = NumberFormat;
+
 
 /***/ })
 /******/ ]);
