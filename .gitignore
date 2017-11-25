@@ -4,5 +4,3 @@ Homestead.json
 Homestead.yaml
 .env
 /node_modules
-composer.lock
-package-lock.json
