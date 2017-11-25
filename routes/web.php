@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +12,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/login', 'AuthController@index');
 
 Route::get('user/verify/{verification_code}', 'AuthController@verifyUser');
+Route::get('/', 'HomeController@index');
+
+Route::group(['prefix' => 'admin', 'middleware' => ['jwt','role:Admin']], function(){
+    Route::get('/', function(){
+        return view('dashboard.admin.dashboard');
+    });
+});
+// Route untuk user yang member
+Route::group(['prefix' => 'member', 'middleware' => ['jwt','role:Member']], function(){
+    Route::get('/', function(){
+        return view('dashboard.member.dashboard');
+    });
+});
