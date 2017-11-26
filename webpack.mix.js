@@ -12,4 +12,5 @@ var mix = require('laravel-mix').mix;
  */
 
 mix.react('resources/assets/js/index.js', 'public/js')
+mix.react('resources/assets/js2/index.js', 'public/js/member.js')
 mix.sass('resources/assets/sass/style.scss', 'public/css/style.min.css')
