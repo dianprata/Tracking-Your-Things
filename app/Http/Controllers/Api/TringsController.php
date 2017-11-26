@@ -46,6 +46,14 @@ class TringsController extends Controller
         $product->save();
     }
 
+    public function detailsProduct($productId, $quantity){
+        $product = Product::find($productId);
+        $productPrice = $product->price;
+        $total = $productPrice*$quantity;
+
+        return response()->json($total, 200);
+    }
+
     public function createCategory(Request $request){
         $category = new Category;
         $category->name = $request->name;

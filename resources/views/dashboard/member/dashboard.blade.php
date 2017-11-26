@@ -12,6 +12,6 @@
 </head>
 <body>
 <div id="root"></div>
-<script src="{{ url('/js/index.js') }}"></script>
+<script src="{{ url('/js/member.js') }}"></script>
 </body>
 </html>
