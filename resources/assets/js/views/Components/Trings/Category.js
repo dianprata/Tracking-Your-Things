@@ -140,7 +140,7 @@ class Category extends Component {
                                   <ModalBody>
                                   <FormGroup>
                                     <Label htmlFor="name">Category Name</Label>
-                                    <Input type="text" id="name" placeholder="Enter your category name" onChange={this.onChangeCategoryNameEdit.bind(this)} value={category.name}/>
+                                    <Input type="text" id="name" placeholder="Enter your category name" onChange={this.onChangeCategoryNameEdit.bind(this)} />
                                   </FormGroup>
                                   </ModalBody>
                                   <ModalFooter>
