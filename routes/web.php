@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/login', 'AuthController@index');
+Route::get('/register', 'AuthController@signIn');
 
 Route::get('user/verify/{verification_code}', 'AuthController@verifyUser');
 Route::get('/', 'HomeController@index');

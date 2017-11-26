@@ -23,6 +23,10 @@ class AuthController extends Controller
         return view('login');
     }
 
+    public function signIn(){
+        return view('register');
+    }
+
     public function register(Request $request)
     {
         $rules = [

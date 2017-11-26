@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <p>Ini Homepage</p>
-    </body>
-</html>
+@extends('layouts.app');
+
+@section('title', 'TRINGS | HOME');
+
+@section('content')
+    <div class="text-center">
+        <h1>Ini Home Page</h1>
+    </div>
+@endsection
