@@ -96,6 +96,7 @@ class Product extends Component {
             quantity: this.state.quantity
         }
         postRequest('/api/product/create',payload,(res) => {
+            this.fetchProduct();
             console.log(res);
         }, (err) => {
             console.log(err);

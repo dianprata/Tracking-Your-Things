@@ -89733,6 +89733,8 @@ var Product = function (_Component) {
     }, {
         key: "doCreateProduct",
         value: function doCreateProduct() {
+            var _this4 = this;
+
             var payload = {
                 name: this.state.name,
                 category_id: this.state.category_id,
@@ -89740,6 +89742,7 @@ var Product = function (_Component) {
                 quantity: this.state.quantity
             };
             Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["b" /* postRequest */])('/api/product/create', payload, function (res) {
+                _this4.fetchProduct();
                 console.log(res);
             }, function (err) {
                 console.log(err);
@@ -89748,7 +89751,7 @@ var Product = function (_Component) {
     }, {
         key: "doEditProduct",
         value: function doEditProduct(e) {
-            var _this4 = this;
+            var _this5 = this;
 
             this.setState({
                 modal: !this.state.modal
@@ -89761,7 +89764,7 @@ var Product = function (_Component) {
                 quantity: this.state.quantityEdit
             };
             Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["b" /* postRequest */])('/api/product/edit/' + payload.id, payload, function (res) {
-                _this4.fetchProduct();
+                _this5.fetchProduct();
                 console.log(res);
             }, function (err) {
                 console.log(err);
@@ -89770,13 +89773,13 @@ var Product = function (_Component) {
     }, {
         key: "doDestroyProduct",
         value: function doDestroyProduct(e) {
-            var _this5 = this;
+            var _this6 = this;
 
             var payload = {
                 id: e.target.id
             };
             Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["a" /* getRequest */])('/api/product/destroy/' + payload.id, function (res) {
-                _this5.fetchProduct();
+                _this6.fetchProduct();
                 console.log(res);
             }, function (err) {
                 console.log(err);
@@ -89793,7 +89796,7 @@ var Product = function (_Component) {
     }, {
         key: "render",
         value: function render() {
-            var _this6 = this;
+            var _this7 = this;
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
@@ -89981,15 +89984,15 @@ var Product = function (_Component) {
                                                 null,
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
-                                                    { onClick: _this6.getProductId.bind(_this6), id: product.id, color: "warning" },
+                                                    { onClick: _this7.getProductId.bind(_this7), id: product.id, color: "warning" },
                                                     "Edit"
                                                 ),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     __WEBPACK_IMPORTED_MODULE_1_reactstrap__["D" /* Modal */],
-                                                    { isOpen: _this6.state.modal, toggle: _this6.toggle, className: _this6.props.className },
+                                                    { isOpen: _this7.state.modal, toggle: _this7.toggle, className: _this7.props.className },
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                         __WEBPACK_IMPORTED_MODULE_1_reactstrap__["G" /* ModalHeader */],
-                                                        { toggle: _this6.toggle },
+                                                        { toggle: _this7.toggle },
                                                         "Edit Product"
                                                     ),
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -90003,7 +90006,7 @@ var Product = function (_Component) {
                                                                 { htmlFor: "name" },
                                                                 "Product Name"
                                                             ),
-                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "name", placeholder: "Enter your product name", onChange: _this6.onChangeNameProductEdit.bind(_this6) }),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "name", placeholder: "Enter your product name", onChange: _this7.onChangeNameProductEdit.bind(_this7) }),
                                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                                 __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
                                                                 { htmlFor: "category" },
@@ -90011,13 +90014,13 @@ var Product = function (_Component) {
                                                             ),
                                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                                 __WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */],
-                                                                { type: "select", name: "category_id", onChange: _this6.onChangeCategoryIdEdit.bind(_this6), id: "select" },
+                                                                { type: "select", name: "category_id", onChange: _this7.onChangeCategoryIdEdit.bind(_this7), id: "select" },
                                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                                     "option",
                                                                     null,
                                                                     "Please Select Category"
                                                                 ),
-                                                                _this6.state.category.map(function (category) {
+                                                                _this7.state.category.map(function (category) {
                                                                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                                         "option",
                                                                         { key: category.id.toString(), value: category.id },
@@ -90030,13 +90033,13 @@ var Product = function (_Component) {
                                                                 { htmlFor: "price" },
                                                                 "Price, 1 Quantity"
                                                             ),
-                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_number_format___default.a, { className: "form-control", required: true, placeholder: "Enter price, 1 quantity", value: _this6.state.priceEdit, thousandSeparator: true, prefix: 'Rp ', onChange: _this6.onChangePriceEdit.bind(_this6) }),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_number_format___default.a, { className: "form-control", required: true, placeholder: "Enter price, 1 quantity", value: _this7.state.priceEdit, thousandSeparator: true, prefix: 'Rp ', onChange: _this7.onChangePriceEdit.bind(_this7) }),
                                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                                 __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
                                                                 { htmlFor: "quantity" },
                                                                 "Quantity"
                                                             ),
-                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "quantity", placeholder: "Enter your quantity", onChange: _this6.onChangeQuantityEdit.bind(_this6) })
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "quantity", placeholder: "Enter your quantity", onChange: _this7.onChangeQuantityEdit.bind(_this7) })
                                                         )
                                                     ),
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -90044,19 +90047,19 @@ var Product = function (_Component) {
                                                         null,
                                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                             __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
-                                                            (_React$createElement = { color: "primary", id: product.id }, _defineProperty(_React$createElement, "color", "warning"), _defineProperty(_React$createElement, "onClick", _this6.doEditProduct.bind(_this6)), _React$createElement),
+                                                            (_React$createElement = { color: "primary", id: product.id }, _defineProperty(_React$createElement, "color", "warning"), _defineProperty(_React$createElement, "onClick", _this7.doEditProduct.bind(_this7)), _React$createElement),
                                                             "Edit"
                                                         ),
                                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                             __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
-                                                            (_React$createElement2 = { color: "secondary" }, _defineProperty(_React$createElement2, "color", "primary"), _defineProperty(_React$createElement2, "onClick", _this6.toggle), _React$createElement2),
+                                                            (_React$createElement2 = { color: "secondary" }, _defineProperty(_React$createElement2, "color", "primary"), _defineProperty(_React$createElement2, "onClick", _this7.toggle), _React$createElement2),
                                                             "Cancel"
                                                         )
                                                     )
                                                 ),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
-                                                    { color: "danger", id: product.id, onClick: _this6.doDestroyProduct.bind(_this6) },
+                                                    { color: "danger", id: product.id, onClick: _this7.doDestroyProduct.bind(_this7) },
                                                     "Delete"
                                                 )
                                             )
@@ -90960,7 +90963,7 @@ var Category = function (_Component) {
                                                                 { htmlFor: "name" },
                                                                 "Category Name"
                                                             ),
-                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "name", placeholder: "Enter your category name", onChange: _this6.onChangeCategoryNameEdit.bind(_this6), value: category.name })
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "name", placeholder: "Enter your category name", onChange: _this6.onChangeCategoryNameEdit.bind(_this6) })
                                                         )
                                                     ),
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
