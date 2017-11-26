@@ -1,6 +1,6 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
-@section('title', 'Register');
+@section('title', 'Register')
 
 @section('content')
 <div class="panel panel-default">
@@ -16,6 +16,10 @@
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" class="form-control" id="company" name="company" placeholder="Company">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>

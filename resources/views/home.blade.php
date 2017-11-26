@@ -1,6 +1,6 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
-@section('title', 'TRINGS | HOME');
+@section('title', 'TRINGS | HOME')
 
 @section('content')
     <div class="text-center">
