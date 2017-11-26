@@ -28,6 +28,7 @@ Route::group(['middleware' => ['jwt.auth']], function() {
     Route::post('product/create', 'Api\TringsController@createProduct');
     Route::post('product/edit/{productId}', 'Api\TringsController@editProduct');
     Route::get('product/showProduct', 'Api\TringsController@showProduct');
+    Route::get('product/showProduct/{productId}/{quantity}', 'Api\TringsController@detailsProduct');
     Route::get('product/destroy/{productId}', 'Api\TringsController@destroyProduct');
 
     Route::post('category/create', 'Api\TringsController@createCategory');

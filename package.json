@@ -28,6 +28,7 @@
     "react-pdf-component": "0.0.1",
     "react-pdfjs": "^1.0.7",
     "react-redux": "^5.0.6",
+    "react-shopping-cart": "^1.8.1",
     "redux": "^3.7.2",
     "universal-cookie": "^2.1.2"
   },
