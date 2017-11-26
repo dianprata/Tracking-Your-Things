@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Row, Col, Card, CardHeader, CardBlock, Button, FormGroup, Label, Input, Table} from "reactstrap";
+import {Row, Col, Card, CardHeader, CardBlock, Button, FormGroup, Label, Input, Table, Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
 import {postRequest, getRequest} from "../../../helper/network";
 import NumberFormat from "react-number-format";
 
@@ -10,11 +10,25 @@ class Product extends Component {
         this.state = {
             category: [],
             product: [],
+            productId: "",
             name: "",
+            nameEdit:"",
             category_id: "",
+            category_idEdit: "",
             price: "",
-            quantity: ""
-        }
+            priceEdit: "",
+            quantity: "",
+            quantityEdit: "",
+            modal: false
+        };
+
+        this.toggle = this.toggle.bind(this);
+    }
+
+    toggle(){
+        this.setState({
+            modal: !this.state.modal
+        })
     }
 
     componentDidMount(){
@@ -44,8 +58,16 @@ class Product extends Component {
         this.setState({ name: e.target.value })
     }
 
+    onChangeNameProductEdit(e){
+        this.setState({ nameEdit: e.target.value })
+    }
+
     onChangeCategoryId(e){
         this.setState({ category_id: e.target.value })
+    }
+
+    onChangeCategoryIdEdit(e){
+        this.setState({ category_idEdit: e.target.value })
     }
 
     onChangePrice(e, values){
@@ -53,8 +75,17 @@ class Product extends Component {
         this.setState({ price: value })
     }
 
+    onChangePriceEdit(e, values){
+        let {formattedValue, value} = values;
+        this.setState({ priceEdit: value })
+    }
+
     onChangeQuantity(e){
         this.setState({ quantity: e.target.value })
+    }
+
+    onChangeQuantityEdit(e){
+        this.setState({ quantityEdit: e.target.value })
     }
 
     doCreateProduct(){
@@ -71,6 +102,47 @@ class Product extends Component {
 
         });
     }
+
+    doEditProduct(e){
+        this.setState({
+            modal: !this.state.modal
+        })
+        let payload = {
+            id: e.target.id,
+            name: this.state.nameEdit,
+            category_id: this.state.category_idEdit,
+            price: this.state.priceEdit,
+            quantity: this.state.quantityEdit
+        }
+        postRequest('/api/product/edit/'+payload.id,payload,(res) => {
+            this.fetchProduct();
+            console.log(res);
+        }, (err) => {
+            console.log(err);
+
+        });
+    }
+
+    doDestroyProduct(e){
+        let payload = {
+            id: e.target.id
+        }
+        getRequest('/api/product/destroy/'+payload.id,(res) => {
+            this.fetchProduct();
+            console.log(res);
+        }, (err) => {
+            console.log(err);
+
+        });
+    }
+
+    getProductId(e){
+        this.setState({
+            productId: e.target.id,
+            modal: !this.state.modal
+        });
+    }
+
   render() {
     return (
       <div className="animated fadeIn">
@@ -139,7 +211,41 @@ class Product extends Component {
                             <td>{ product.get_category.name }</td>
                             <td>{ product.price }</td>
                             <td>{ product.quantity }</td>
-                            <td><Button color="success" id={ product.id } >Verify</Button> <Button color="warning" id={ product.id }>Decline</Button></td>
+                            <td>
+                                <Button onClick={this.getProductId.bind(this)} id={product.id} color="warning">Edit</Button>
+                                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                                  <ModalHeader toggle={this.toggle}>Edit Product</ModalHeader>
+                                  <ModalBody>
+                                  <FormGroup>
+                                    <Label htmlFor="name">Product Name</Label>
+                                    <Input type="text" id="name" placeholder="Enter your product name" onChange={this.onChangeNameProductEdit.bind(this)}/>
+
+                                    <Label htmlFor="category">Category Name</Label>
+                                    <Input type="select" name="category_id" onChange={this.onChangeCategoryIdEdit.bind(this)} id="select">
+                                    <option>Please Select Category</option>
+                                    { this.state.category.map((category) => {
+                                            return (
+                                                <option key={category.id.toString()} value={category.id}>{category.name}</option>
+                                            )
+                                    }) }
+                                    </Input>
+
+                                    <Label htmlFor="price">Price, 1 Quantity</Label>
+                                    <NumberFormat className="form-control" required placeholder="Enter price, 1 quantity" value={this.state.priceEdit} thousandSeparator={true} prefix={'Rp '} onChange={this.onChangePriceEdit.bind(this)}/>
+
+                                    <Label htmlFor="quantity">Quantity</Label>
+                                    <Input type="text" id="quantity" placeholder="Enter your quantity" onChange={this.onChangeQuantityEdit.bind(this)}/>
+
+                                  </FormGroup>
+                                  </ModalBody>
+                                  <ModalFooter>
+                                    <Button color="primary" id={product.id} color="warning" onClick={this.doEditProduct.bind(this)}>Edit</Button>
+                                    <Button color="secondary" color="primary" onClick={this.toggle}>Cancel</Button>
+                                  </ModalFooter>
+                                </Modal>
+
+                                <Button color="danger" id={product.id} onClick={this.doDestroyProduct.bind(this)}>Delete</Button>
+                            </td>
                         </tr>
                     )
                   }) }

@@ -105,7 +105,7 @@ class Category extends Component {
               <CardBlock className="card-body">
                 <FormGroup>
                   <Label htmlFor="name">Category Name</Label>
-                  <Input type="text" id="name" placeholder="Enter your category name" onChange={this.onChangeCategoryName.bind(this)}/>
+                  <Input type="text" id="name" placeholder="Enter your category name" onChange={this.onChangeCategoryName.bind(this)} />
                 </FormGroup>
                 <FormGroup>
                     <Button color="success" onClick={this.doCreateCategory.bind(this)}>Create</Button>
@@ -140,7 +140,7 @@ class Category extends Component {
                                   <ModalBody>
                                   <FormGroup>
                                     <Label htmlFor="name">Category Name</Label>
-                                    <Input type="text" id="name" placeholder="Enter your category name" onChange={this.onChangeCategoryNameEdit.bind(this)}/>
+                                    <Input type="text" id="name" placeholder="Enter your category name" onChange={this.onChangeCategoryNameEdit.bind(this)} value={category.name}/>
                                   </FormGroup>
                                   </ModalBody>
                                   <ModalFooter>

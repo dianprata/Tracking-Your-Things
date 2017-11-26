@@ -118,7 +118,7 @@ class Verify extends Component {
                                 {(() => {
                                         switch (true) {
                                             case (member.active === 0):
-                                                return <Badge color="secondary">Inactive</Badge>;
+                                                return <Badge color="danger">Deactive</Badge>;
                                         }
                                 })()}
                                 </td>

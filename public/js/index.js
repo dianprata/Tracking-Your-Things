@@ -82860,8 +82860,8 @@ var Verify = function (_Component) {
                                                         case member.active === 0:
                                                             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                                 __WEBPACK_IMPORTED_MODULE_1_reactstrap__["b" /* Badge */],
-                                                                { color: "secondary" },
-                                                                "Inactive"
+                                                                { color: "danger" },
+                                                                "Deactive"
                                                             );
                                                     }
                                                 }()
@@ -90503,6 +90503,8 @@ exports.clearImmediate = clearImmediate;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_number_format___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_number_format__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -90525,15 +90527,30 @@ var Product = function (_Component) {
         _this.state = {
             category: [],
             product: [],
+            productId: "",
             name: "",
+            nameEdit: "",
             category_id: "",
+            category_idEdit: "",
             price: "",
-            quantity: ""
+            priceEdit: "",
+            quantity: "",
+            quantityEdit: "",
+            modal: false
         };
+
+        _this.toggle = _this.toggle.bind(_this);
         return _this;
     }
 
     _createClass(Product, [{
+        key: "toggle",
+        value: function toggle() {
+            this.setState({
+                modal: !this.state.modal
+            });
+        }
+    }, {
         key: "componentDidMount",
         value: function componentDidMount() {
             this.fetchCategory();
@@ -90567,9 +90584,19 @@ var Product = function (_Component) {
             this.setState({ name: e.target.value });
         }
     }, {
+        key: "onChangeNameProductEdit",
+        value: function onChangeNameProductEdit(e) {
+            this.setState({ nameEdit: e.target.value });
+        }
+    }, {
         key: "onChangeCategoryId",
         value: function onChangeCategoryId(e) {
             this.setState({ category_id: e.target.value });
+        }
+    }, {
+        key: "onChangeCategoryIdEdit",
+        value: function onChangeCategoryIdEdit(e) {
+            this.setState({ category_idEdit: e.target.value });
         }
     }, {
         key: "onChangePrice",
@@ -90580,9 +90607,22 @@ var Product = function (_Component) {
             this.setState({ price: value });
         }
     }, {
+        key: "onChangePriceEdit",
+        value: function onChangePriceEdit(e, values) {
+            var formattedValue = values.formattedValue,
+                value = values.value;
+
+            this.setState({ priceEdit: value });
+        }
+    }, {
         key: "onChangeQuantity",
         value: function onChangeQuantity(e) {
             this.setState({ quantity: e.target.value });
+        }
+    }, {
+        key: "onChangeQuantityEdit",
+        value: function onChangeQuantityEdit(e) {
+            this.setState({ quantityEdit: e.target.value });
         }
     }, {
         key: "doCreateProduct",
@@ -90600,8 +90640,55 @@ var Product = function (_Component) {
             });
         }
     }, {
+        key: "doEditProduct",
+        value: function doEditProduct(e) {
+            var _this4 = this;
+
+            this.setState({
+                modal: !this.state.modal
+            });
+            var payload = {
+                id: e.target.id,
+                name: this.state.nameEdit,
+                category_id: this.state.category_idEdit,
+                price: this.state.priceEdit,
+                quantity: this.state.quantityEdit
+            };
+            Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["b" /* postRequest */])('/api/product/edit/' + payload.id, payload, function (res) {
+                _this4.fetchProduct();
+                console.log(res);
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: "doDestroyProduct",
+        value: function doDestroyProduct(e) {
+            var _this5 = this;
+
+            var payload = {
+                id: e.target.id
+            };
+            Object(__WEBPACK_IMPORTED_MODULE_2__helper_network__["a" /* getRequest */])('/api/product/destroy/' + payload.id, function (res) {
+                _this5.fetchProduct();
+                console.log(res);
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: "getProductId",
+        value: function getProductId(e) {
+            this.setState({
+                productId: e.target.id,
+                modal: !this.state.modal
+            });
+        }
+    }, {
         key: "render",
         value: function render() {
+            var _this6 = this;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
                 { className: "animated fadeIn" },
@@ -90758,6 +90845,8 @@ var Product = function (_Component) {
                                     "tbody",
                                     null,
                                     this.state.product.map(function (product) {
+                                        var _React$createElement, _React$createElement2;
+
                                         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "tr",
                                             { key: product.id },
@@ -90786,14 +90875,83 @@ var Product = function (_Component) {
                                                 null,
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
-                                                    { color: "success", id: product.id },
-                                                    "Verify"
+                                                    { onClick: _this6.getProductId.bind(_this6), id: product.id, color: "warning" },
+                                                    "Edit"
                                                 ),
-                                                " ",
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    __WEBPACK_IMPORTED_MODULE_1_reactstrap__["D" /* Modal */],
+                                                    { isOpen: _this6.state.modal, toggle: _this6.toggle, className: _this6.props.className },
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        __WEBPACK_IMPORTED_MODULE_1_reactstrap__["G" /* ModalHeader */],
+                                                        { toggle: _this6.toggle },
+                                                        "Edit Product"
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        __WEBPACK_IMPORTED_MODULE_1_reactstrap__["E" /* ModalBody */],
+                                                        null,
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["w" /* FormGroup */],
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
+                                                                { htmlFor: "name" },
+                                                                "Product Name"
+                                                            ),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "name", placeholder: "Enter your product name", onChange: _this6.onChangeNameProductEdit.bind(_this6) }),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
+                                                                { htmlFor: "category" },
+                                                                "Category Name"
+                                                            ),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */],
+                                                                { type: "select", name: "category_id", onChange: _this6.onChangeCategoryIdEdit.bind(_this6), id: "select" },
+                                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                    "option",
+                                                                    null,
+                                                                    "Please Select Category"
+                                                                ),
+                                                                _this6.state.category.map(function (category) {
+                                                                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                        "option",
+                                                                        { key: category.id.toString(), value: category.id },
+                                                                        category.name
+                                                                    );
+                                                                })
+                                                            ),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
+                                                                { htmlFor: "price" },
+                                                                "Price, 1 Quantity"
+                                                            ),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_number_format___default.a, { className: "form-control", required: true, placeholder: "Enter price, 1 quantity", value: _this6.state.priceEdit, thousandSeparator: true, prefix: 'Rp ', onChange: _this6.onChangePriceEdit.bind(_this6) }),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                __WEBPACK_IMPORTED_MODULE_1_reactstrap__["C" /* Label */],
+                                                                { htmlFor: "quantity" },
+                                                                "Quantity"
+                                                            ),
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "quantity", placeholder: "Enter your quantity", onChange: _this6.onChangeQuantityEdit.bind(_this6) })
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        __WEBPACK_IMPORTED_MODULE_1_reactstrap__["F" /* ModalFooter */],
+                                                        null,
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
+                                                            (_React$createElement = { color: "primary", id: product.id }, _defineProperty(_React$createElement, "color", "warning"), _defineProperty(_React$createElement, "onClick", _this6.doEditProduct.bind(_this6)), _React$createElement),
+                                                            "Edit"
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
+                                                            (_React$createElement2 = { color: "secondary" }, _defineProperty(_React$createElement2, "color", "primary"), _defineProperty(_React$createElement2, "onClick", _this6.toggle), _React$createElement2),
+                                                            "Cancel"
+                                                        )
+                                                    )
+                                                ),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     __WEBPACK_IMPORTED_MODULE_1_reactstrap__["e" /* Button */],
-                                                    { color: "warning", id: product.id },
-                                                    "Decline"
+                                                    { color: "danger", id: product.id, onClick: _this6.doDestroyProduct.bind(_this6) },
+                                                    "Delete"
                                                 )
                                             )
                                         );
@@ -91075,7 +91233,7 @@ var Category = function (_Component) {
                                                                 { htmlFor: "name" },
                                                                 "Category Name"
                                                             ),
-                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "name", placeholder: "Enter your category name", onChange: _this6.onChangeCategoryNameEdit.bind(_this6) })
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_reactstrap__["y" /* Input */], { type: "text", id: "name", placeholder: "Enter your category name", onChange: _this6.onChangeCategoryNameEdit.bind(_this6), value: category.name })
                                                         )
                                                     ),
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

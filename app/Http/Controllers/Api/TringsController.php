@@ -30,6 +30,8 @@ class TringsController extends Controller
         $oldProductRecord = Product::find($productId);
         $oldProductRecord->void = 1;
         $oldProductRecord->save();
+
+        return response()->json("Successfull Edit Product");
     }
 
     public function showProduct(){
@@ -40,7 +42,8 @@ class TringsController extends Controller
 
     public function destroyProduct($productId){
         $product = Product::find($productId);
-        $product->delete();
+        $product->void = 1;
+        $product->save();
     }
 
     public function createCategory(Request $request){
